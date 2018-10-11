@@ -3,117 +3,99 @@ package compressor.lzss
 import compressor.common.BaseCompressor
 import compressor.common.DataBlock
 import util.log
-import util.logElapsedTime
 import java.io.File
-import java.awt.SystemColor.window
-import kotlin.system.measureTimeMillis
 
 
-class LZSSCompressor(val params: CompressionParams, val matchingEngine: SlidingWindowSearcher, verbose: Boolean = false): BaseCompressor("LZSS", verbose) {
-
-
-
+class LZSSCompressor(val params: CompressionParams, val matchingEngine: SlidingWindowSearcher, verbose: Boolean = false) : BaseCompressor("LZSS", verbose) {
 
     override fun doEncode(uncompressedFile: File): List<DataBlock> {
-        val uncompressedSize = uncompressedFile.length()
         val uncompressedBytes: ByteArray = uncompressedFile.readBytes()
-        val window = ArrayList<Byte>()
-        val dict = ArrayList<Byte>()
-        val buffer = ArrayList<Byte>()
-        var dictSizeInBytes = 0
+        val windowBuffer = ArrayList<Byte>(params.dictSizeBytes)
+        val lookaheadBuffer = ArrayList<Byte>(params.maxBytesUncodedLiteral)
         val outputStream = mutableListOf<DataBlock>()
+        val byteIterator = uncompressedBytes.iterator()
 
-        uncompressedBytes.forEachIndexed{ index, byte ->
-            if (index % 1 == 0){
-                val windowProgress = "Window: ${window.size} / ${params.windowSize}"
-                val dictProgress = "Dict: ${dict.size} / ${params.dictSizeBytes}"
-                val bufferProgress = "Buffer: ${buffer.size} / ${params.maxCodeLengthBytes}"
-                val byteProgress = "Byte: $index / $uncompressedSize"
-                log("$windowProgress |\t $dictProgress |\t $bufferProgress |\t $byteProgress")
+        fillBuffer(lookaheadBuffer, params.maxCodeLengthBytes, byteIterator)
+
+        while (lookaheadBuffer.isNotEmpty()) {
+            val searchResults = matchingEngine.findMatch(windowBuffer, lookaheadBuffer)
+
+            if (searchResults.matchedLength <= params.maxBytesUncodedLiteral) {
+                writeLiteralToOutput(lookaheadBuffer[0], outputStream)
+                transferBuffers(1, fromBuffer = lookaheadBuffer, toBuffer = windowBuffer)
+            } else { // we found a long enough match with our search
+                writeBackReferenceToOutput(searchResults.offset, searchResults.matchedLength, outputStream)
+                transferBuffers(searchResults.matchedLength, lookaheadBuffer, windowBuffer)
             }
 
-            /*if our window and buffer are not filled up, fill them with our data*/
-//            if (window.size < params.windowSize - 1){
-//                if (dictSizeInBytes < params.dictSizeBytes){ //Write the first lookback size as literals
-//                    outputStream.add(DataBlock.Literal(byte))
-//                }
-//                window.add(byte)
-//            }
-
-                if (dict.size < params.dictSizeBytes){ //Write the first lookback size as literals
-                    outputStream.add(DataBlock.Literal(byte))
-                    dict.add(byte)
-                } else if (buffer.size < params.maxCodeLengthBytes - 1) {
-                    buffer.add(byte)
-                } else {
-                //now we can begin encoding by adding to open spot in buffer
-//                window.add(byte)
-                buffer.add(byte)
-//                val searchResults = searchForMatch(window)
-                val searchResults = matchingEngine.findMatch(dict, buffer, 0, 0)
-                var matchLength: Int = searchResults.matchedLength
-                if (matchLength <= params.maxBytesUncodedLiteral){ //can't find a long enough match in window
-//                    val bufferHead = window[params.dictSizeBytes]
-//                    outputStream.add(DataBlock.Literal(bufferHead))
-                    outputStream.add(DataBlock.Literal(buffer[0]))
-                    matchLength = 1 // set back to amount of bytes we just wrote from buffer
-                } else { // we found a long enough match with our search
-                    val adjustedLength = matchLength - params.maxBytesUncodedLiteral // save bytes by writing first literals
-                    outputStream.add(DataBlock.BackReference(searchResults.offset, adjustedLength))
-                }
-//                //slide the window
-//                window.drop(matchLength)
-
-                measureTimeMillis {
-                    (0..matchLength)
-                            .map { buffer.removeAt(0)}
-                            .let { window.addAll(it)}
-                    (0..matchLength).let {
-                        window.removeAt(0)
-                    }
-                }.let { logElapsedTime("Removing $matchLength items", it) }
-
-
-
-            }
+            fillBuffer(lookaheadBuffer, params.maxCodeLengthBytes, byteIterator)
+            trimBuffer(windowBuffer, maxSize = params.dictSizeBytes)
         }
+        log("Bytes left in buffer = ${lookaheadBuffer.size}")
+        log("Bytes left in iterator = ${byteIterator.hasNext()} ")
+        doDecompress(outputStream)
         return outputStream
     }
 
-//    fun searchForMatch(window: ArrayList<Byte>): MatchResult {
-//        var matchLength = 0
-//        val firstByte = window[params.dictSizeBytes]
-//        var fromIndex = 0
-//        var offset = window.indexOf(fromIndex, firstByte)
-//        window.in
-//
-//        while (offset < params.dictSizeBytes && offset != -1) {
-//            offset = window.indexOf(fromIndex, firstByte)
-//            fromIndex = offset + 1
-//            var curMatchLength = 0
-//
-//            for (m in 1..Math.min(LZSS.BUFF_SIZE, LZSS.DICT_SIZE - offset) - 1) {
-//                curMatchLength++
-//                if (window[offset + m] !== window[LZSS.DICT_SIZE + m]) {
-//                    break
-//                }
-//            }
-//
-//            if (curMatchLength > LZSS.MAX_UNCODED) {
-//                dictOffset = (if (curMatchLength > matchLength) offset else dictOffset).toShort()
-//                matchLength = Math.max(matchLength, curMatchLength)
-//            }
+    override fun doDecompress(compressionData: List<DataBlock>) {
+        val windowBuffer = ArrayList<Byte>()
+        val outputStream = ArrayList<Byte>()
+        val blockIterator = compressionData.iterator()
+        while (blockIterator.hasNext()) {
+            val block = blockIterator.next()
+
+            if (block is DataBlock.Literal) {
+                outputStream.add(block.byte)
+                windowBuffer.add(block.byte)
+            } else if (block is DataBlock.BackReference) {
+                val offset = block.distanceBack
+                val length = block.runLength
+
+                val decodeBuffer = windowBuffer.subList(offset, offset + length)
+                decodeBuffer.forEach {
+                    outputStream.add(it)
+                }
+
+                windowBuffer.addAll(decodeBuffer)
+                trimBuffer(windowBuffer, maxSize = params.dictSizeBytes)
+            }
+
+        }
+        outputStream.map { it.toChar() }.joinToString("").let(System.out::println)
+
+    }
+
+    private fun writeLiteralToOutput(byte: Byte, output: MutableList<DataBlock>) {
+        output.add(DataBlock.Literal(byte))
+    }
+
+    private fun writeBackReferenceToOutput(offset: Int, matchLength: Int, output: MutableList<DataBlock>) {
+        output.add(DataBlock.BackReference(offset, matchLength))
+    }
+
+    private fun fillBuffer(buffer: ArrayList<Byte>, maxSize: Int, source: ByteIterator) {
+        while (buffer.size < maxSize && source.hasNext()) {
+            buffer.add(source.nextByte()) //if the buffer is not filled, fill with file bytes first
+        }
+    }
+
+    private fun transferBuffers(nBytesToTransfer: Int, fromBuffer: ArrayList<Byte>, toBuffer: ArrayList<Byte>) {
+        (1..nBytesToTransfer).forEach { toBuffer.add(fromBuffer.removeAt(0)) }
+    }
+
+    private fun trimBuffer(buffer: ArrayList<Byte>, maxSize: Int) {
+        while (buffer.size > maxSize) {
+            buffer.removeAt(0) //should remove the number of matched items
+        }
+    }
+
+//    private fun logProgress(){
+//        if (index % 10000 == 0 && verbose) {
+//            val dictProgress = "Dict: ${dict.size} / ${params.dictSizeBytes}"
+//            val bufferProgress = "Buffer: ${buffer.size} / ${params.maxCodeLengthBytes}"
+//            val byteProgress = "Byte: $index / $uncompressedSize"
+//            log("\t $dictProgress |\t $bufferProgress |\t $byteProgress")
 //        }
-//        return MatchResult(1, 1)
 //    }
 
-    data class MatchResult(val matchedLength: Int, val offset: Int)
 }
-
-
-
-
-
-
-//    static final short DICT_OFFSET_BITS = (short) (Math.log(DICT_SIZE) / Math.log(2));  // so, its 12 bits
-//    static final short MATCH_LENGTH_BITS = (short) Math.floor(Math.log(BUFF_SIZE) / Math.log(2));  /

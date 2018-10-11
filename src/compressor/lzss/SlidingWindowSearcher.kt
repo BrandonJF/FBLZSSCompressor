@@ -2,46 +2,45 @@ package compressor.lzss
 
 import util.log
 
-class SlidingWindowSearcher( val compressionParams: CompressionParams) {
+class SlidingWindowSearcher(val compressionParams: CompressionParams) {
 
-    fun findMatch( slidingWindow : ArrayList<Byte>,  buffer: ArrayList<Byte>, windowHead: Int = 0, bufferHead: Int = 0) : LZSSCompressor.MatchResult{
-        var matchLength = 0
-        var matchOffset = 0
+    fun findMatch(window: ArrayList<Byte>, buffer: ArrayList<Byte>): MatchResult {
+        var bestMatch = MatchResult(0, 0)
+        if (window.isEmpty() || buffer.isEmpty()) return bestMatch
+        var offset = 0
+        var codeLen = 0
 
-        var i = windowHead
-        var j = 0
-
-        while (i < slidingWindow.size) {
-            if (slidingWindow[i] == buffer[bufferHead]){
-                j = 1//there's a match
-                while (slidingWindow[i+j] == buffer[bufferHead+j]){
-                    if (j >= compressionParams.maxCodeLengthBytes){
+        while (offset < window.size && codeLen < buffer.size) {
+            if (window[offset] == buffer.first()) {
+                codeLen = 1//there's a match
+                while (offset + codeLen < window.size && codeLen < buffer.size && window[offset + codeLen] == buffer[codeLen]) {
+                    if (codeLen >= compressionParams.maxCodeLengthBytes) {
                         break
                     }
-                    j++ //keep building up code
+                    codeLen++ //keep building up code
                 }
-                if (j >= matchLength) { //update latest long match
-                    matchLength = j
-                    matchOffset = i
+                if (codeLen >= bestMatch.matchedLength) { //update latest long match
+                    bestMatch = MatchResult(codeLen, offset)
                 }
-                if (j >= compressionParams.maxCodeLengthBytes) {
-                    matchLength = compressionParams.maxCodeLengthBytes;
+                if (codeLen >= compressionParams.maxCodeLengthBytes) {
+                    bestMatch = MatchResult(compressionParams.maxCodeLengthBytes, bestMatch.offset)
                     break
                 }
             }
-
-
-
-            i++
-//            if ()
+            offset++
         }
-        val result = LZSSCompressor.MatchResult(matchLength,matchOffset)
-        val sub = slidingWindow.subList(result.offset, result.offset + result.matchedLength)
-        log(sub.toString())
-        sub.map { it.toChar() }.let { it.joinToString("") }.let(System.out::println)
-        log(j.toString())
+        if (bestMatch.matchedLength < 1) {
+            return MatchResult(0, 0)
+        } else {
 
-        log(result.toString())
-        return result
+//            val result = MatchResult(bestMatch.matchedLength, (window.size - bestMatch.offset) * -1)
+            val result = bestMatch
+            val sub = window.subList(bestMatch.offset, bestMatch.offset + bestMatch.matchedLength)
+//            log(sub.toString())
+            sub.map { it.toChar() }.let { it.joinToString("") }.let(System.out::println)
+            log(result.toString())
+            log("Window size = ${window.size}")
+            return result
+        }
     }
 }

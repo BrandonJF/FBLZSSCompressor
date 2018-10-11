@@ -3,8 +3,7 @@ package compressor.common
 sealed class DataBlock {
     class Literal(val byte: Byte) : DataBlock(){
         override fun toString(): String {
-            return "$byte" //0
-//            return "(val, $bits)" //0
+            return "${byte.toChar()}" //0
         }
     }
 

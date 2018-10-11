@@ -8,6 +8,7 @@ import kotlin.system.measureTimeMillis
 abstract class BaseCompressor(val compressionName: String = "Generic Compression", val verbose: Boolean = false) {
 
     abstract fun doEncode(uncompressedFile: File): List<DataBlock>
+    abstract fun doDecompress(compressionData : List<DataBlock>): Unit
 
     fun encode(filename: String, uncompressedFile: File) {
 
@@ -40,10 +41,9 @@ abstract class BaseCompressor(val compressionName: String = "Generic Compression
         "\tCompressed Size (Bytes):\t$compressedSize",
         "\tSpace Saved %:\t$percentDifference \n","\tCompression Time: \t$executionTime seconds\n").forEach(::log)
 
-        if (verbose){
+        if (verbose) {
             log(encodedStream.joinToString(""))
         }
-
         log("END Stats-------------------------*** \n")
 
     }
