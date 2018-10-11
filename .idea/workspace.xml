@@ -1,32 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec9c0726-ba6c-4b83-b1f7-eb115eb35cba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/compressor/lzss/MatchResult.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/samples/alittletest" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GreenEggsCorpus.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/SampleCorpus.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/book1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/book2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/geo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/news" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/obj1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/obj2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/paper1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/paper2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/pic" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/progc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/progl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/progp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/trans" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FBCompression.iml" afterPath="$PROJECT_DIR$/FBCompression.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/compressor/common/BaseCompressor.kt" afterPath="$PROJECT_DIR$/src/compressor/common/BaseCompressor.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/compressor/common/DataBlock.kt" afterPath="$PROJECT_DIR$/src/compressor/common/DataBlock.kt" />
+    <list default="true" id="ec9c0726-ba6c-4b83-b1f7-eb115eb35cba" name="Default" comment="Massive upload of latest compression">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/samples/bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/alittletesttestfile0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/bibtestfile1" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt" afterPath="$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt" afterPath="$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt" afterPath="$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/compressor/lzw/LZWCompressor.kt" afterPath="$PROJECT_DIR$/src/compressor/lzw/LZWCompressor.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.kt" afterPath="$PROJECT_DIR$/src/main.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/samples/alittletest" afterPath="$PROJECT_DIR$/src/samples/alittletest" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,11 +28,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="CompressionParams.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SlidingWindowSearcher.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="alittletest" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/samples/alittletest">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="88" column="22" lean-forward="false" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+            <state relative-caret-position="497">
+              <caret line="1322" column="0" lean-forward="true" selection-start-line="1322" selection-start-column="0" selection-end-line="1322" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -57,8 +61,8 @@
       <file leaf-file-name="main.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+            <state relative-caret-position="240">
+              <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
               <folding>
                 <element signature="e#0#210#0" expanded="true" />
               </folding>
@@ -69,8 +73,8 @@
       <file leaf-file-name="LZSSCompressor.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state relative-caret-position="720">
+              <caret line="48" column="44" lean-forward="true" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
               <folding>
                 <element signature="e#25#135#0" expanded="true" />
               </folding>
@@ -108,6 +112,7 @@
       <find>as a man</find>
       <find>window</find>
       <find>offset</find>
+      <find>25</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,15 +138,15 @@
         <option value="$PROJECT_DIR$/src/compressor/lzss/KnutMorrisPrat.java" />
         <option value="$PROJECT_DIR$/src/compressor/lzss/KMP.kt" />
         <option value="$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcherTest.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt" />
         <option value="$PROJECT_DIR$/src/util/Util.kt" />
         <option value="$PROJECT_DIR$/src/compressor/common/DataBlock.kt" />
         <option value="$PROJECT_DIR$/src/compressor/lzss/MatchResult.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt" />
         <option value="$PROJECT_DIR$/src/compressor/common/BaseCompressor.kt" />
         <option value="$PROJECT_DIR$/src/compressor/lzw/LZWCompressor.kt" />
-        <option value="$PROJECT_DIR$/src/main.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt" />
         <option value="$PROJECT_DIR$/src/samples/alittletest" />
+        <option value="$PROJECT_DIR$/src/main.kt" />
         <option value="$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt" />
       </list>
     </option>
@@ -230,8 +235,9 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="lzs&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSCompressor.kt&#10;main&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/main.kt&#10;alit&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;sear&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/SlidingWindowSearcher.kt&#10;l&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSCompressor.kt&#10;sea&#9;null&#9;null&#10;com\&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/BaseCompressor.kt&#10;lzss&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSCompressor.kt&#10;lzw&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzw/LZWCompressor.kt&#10;base&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/BaseCompressor.kt&#10;a li&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;lz&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzw/LZWCompressor.kt&#10;databloc&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/DataBlock.kt&#10;ain&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/main.kt&#10;matc&#9;null&#9;null&#10;se&#9;null&#9;null&#10;co&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/SampleCorpus.txt" />
+    <property name="SearchEverywhereHistoryKey" value="main&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/main.kt&#10;sear&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/SlidingWindowSearcher.kt&#10;ali&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;lzs&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSCompressor.kt&#10;alit&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;l&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSCompressor.kt&#10;sea&#9;null&#9;null&#10;com\&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/BaseCompressor.kt&#10;lzss&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSCompressor.kt&#10;lzw&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzw/LZWCompressor.kt&#10;base&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/BaseCompressor.kt&#10;a li&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;lz&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzw/LZWCompressor.kt&#10;databloc&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/DataBlock.kt&#10;ain&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/main.kt&#10;matc&#9;null&#9;null&#10;se&#9;null&#9;null&#10;co&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/SampleCorpus.txt" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -485,15 +491,15 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt</url>
-          <line>54</line>
+          <line>51</line>
           <properties />
-          <option name="timeStamp" value="47" />
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="48" />
+      <option name="time" value="51" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JetRunConfigurationType">
@@ -502,6 +508,8 @@
         <watch expression="byte" language="kotlin" />
         <watch expression="buffer.get(0)" language="kotlin" />
         <watch expression="buffer.get(buffer.size-1)" language="kotlin" />
+        <watch expression="sub.map { it.toChar() }.let { it.joinToString(&quot;&quot;) }" language="kotlin" />
+        <watch expression="window.map { it.toChar() }.let { it.joinToString(&quot;&quot;) }" language="kotlin" />
       </configuration>
     </watches-manager>
   </component>
@@ -714,14 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="39" column="88" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/compressor/lzw/LZWCompressor.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -756,14 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/compressor/lzss/MatchResult.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -772,28 +764,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/samples/alittletest">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="1322" column="0" lean-forward="true" selection-start-line="1322" selection-start-column="0" selection-end-line="1322" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
           <folding>
             <element signature="e#0#210#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/samples/alittletest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="88" column="22" lean-forward="false" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state relative-caret-position="720">
+          <caret line="48" column="44" lean-forward="true" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
           <folding>
             <element signature="e#25#135#0" expanded="true" />
           </folding>

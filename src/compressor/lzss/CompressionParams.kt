@@ -13,5 +13,5 @@ import sun.security.util.Length
 data class CompressionParams(
         val maxBytesUncodedLiteral: Int = 2,//most chars allowed without coding in bits
         val maxCodeLengthBytes: Int = 64, //longest code allowed to copy, buffer size = 2^6 (6bit pointer)
-        val dictSizeBytes: Int = 65536, //max offset chars to lookback/bytes = 2^16 (16bit pointer)
-        val windowSize: Int = dictSizeBytes + maxCodeLengthBytes)
+        val dictSizeBytes: Int = 65536//max offset chars to lookback/bytes = 2^16 (16bit pointer)
+)

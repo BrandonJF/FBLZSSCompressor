@@ -12,6 +12,8 @@ import java.nio.file.Paths
 fun main(args: Array<String>) {
 //    val compressorLZW = LZWCompressor(verbose = false)
     val params = CompressionParams(maxBytesUncodedLiteral = 2)
+    val testParams = CompressionParams(maxBytesUncodedLiteral = 2, maxCodeLengthBytes = 5, dictSizeBytes = 13)
+//    val testSearchParams = CompressionParams(maxBytesUncodedLiteral = 2, maxCodeLengthBytes = 10, dictSizeBytes = 12)
     val compressorLZSS = LZSSCompressor(params, SlidingWindowSearcher(params), verbose = true)
     getSampleFiles()?.take(2)?.forEachIndexed { index, file ->
         compress(file, compressorLZSS)

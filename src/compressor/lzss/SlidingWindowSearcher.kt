@@ -33,13 +33,13 @@ class SlidingWindowSearcher(val compressionParams: CompressionParams) {
             return MatchResult(0, 0)
         } else {
 
-//            val result = MatchResult(bestMatch.matchedLength, (window.size - bestMatch.offset) * -1)
-            val result = bestMatch
-            val sub = window.subList(bestMatch.offset, bestMatch.offset + bestMatch.matchedLength)
+            val result = MatchResult(bestMatch.matchedLength, (window.size - bestMatch.offset) * -1)
+//            val result = bestMatch
+//            val sub = window.subList(bestMatch.offset, bestMatch.offset + bestMatch.matchedLength)
 //            log(sub.toString())
-            sub.map { it.toChar() }.let { it.joinToString("") }.let(System.out::println)
-            log(result.toString())
-            log("Window size = ${window.size}")
+//            sub.map { it.toChar() }.let { it.joinToString("") }.let(System.out::println)
+//            log(result.toString())
+//            log("Window size = ${window.size}")
             return result
         }
     }

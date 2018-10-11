@@ -24,6 +24,7 @@ class LZSSCompressor(val params: CompressionParams, val matchingEngine: SlidingW
                 writeLiteralToOutput(lookaheadBuffer[0], outputStream)
                 transferBuffers(1, fromBuffer = lookaheadBuffer, toBuffer = windowBuffer)
             } else { // we found a long enough match with our search
+                val adjustedLen = searchResults.matchedLength - (params.maxBytesUncodedLiteral + 1)
                 writeBackReferenceToOutput(searchResults.offset, searchResults.matchedLength, outputStream)
                 transferBuffers(searchResults.matchedLength, lookaheadBuffer, windowBuffer)
             }
@@ -50,14 +51,13 @@ class LZSSCompressor(val params: CompressionParams, val matchingEngine: SlidingW
             } else if (block is DataBlock.BackReference) {
                 val offset = block.distanceBack
                 val length = block.runLength
-
-                val decodeBuffer = windowBuffer.subList(offset, offset + length)
+                val decodeBuffer = windowBuffer.subList(windowBuffer.size + offset, windowBuffer.size + offset + length)
                 decodeBuffer.forEach {
                     outputStream.add(it)
                 }
 
                 windowBuffer.addAll(decodeBuffer)
-                trimBuffer(windowBuffer, maxSize = params.dictSizeBytes)
+                trimBuffer(windowBuffer, maxSize = params.dictSizeBytes )
             }
 
         }
@@ -85,6 +85,7 @@ class LZSSCompressor(val params: CompressionParams, val matchingEngine: SlidingW
 
     private fun trimBuffer(buffer: ArrayList<Byte>, maxSize: Int) {
         while (buffer.size > maxSize) {
+            log("trimming one")
             buffer.removeAt(0) //should remove the number of matched items
         }
     }
