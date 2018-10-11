@@ -24,16 +24,14 @@ class LZSSCompressor(val params: CompressionParams, val matchingEngine: SlidingW
                 writeLiteralToOutput(lookaheadBuffer[0], outputStream)
                 transferBuffers(1, fromBuffer = lookaheadBuffer, toBuffer = windowBuffer)
             } else { // we found a long enough match with our search
-                val adjustedLen = searchResults.matchedLength - (params.maxBytesUncodedLiteral + 1)
-                writeBackReferenceToOutput(searchResults.offset, searchResults.matchedLength, outputStream)
+                val adjustedLen = searchResults.matchedLength - (params.maxBytesUncodedLiteral + 1) //fit len into less bits
+                writeBackReferenceToOutput(searchResults.offset, adjustedLen, outputStream)
                 transferBuffers(searchResults.matchedLength, lookaheadBuffer, windowBuffer)
             }
 
             fillBuffer(lookaheadBuffer, params.maxCodeLengthBytes, byteIterator)
             trimBuffer(windowBuffer, maxSize = params.dictSizeBytes)
         }
-        log("Bytes left in buffer = ${lookaheadBuffer.size}")
-        log("Bytes left in iterator = ${byteIterator.hasNext()} ")
         doDecompress(outputStream)
         return outputStream
     }
@@ -50,7 +48,7 @@ class LZSSCompressor(val params: CompressionParams, val matchingEngine: SlidingW
                 windowBuffer.add(block.byte)
             } else if (block is DataBlock.BackReference) {
                 val offset = block.distanceBack
-                val length = block.runLength
+                val length = block.runLength + (params.maxBytesUncodedLiteral + 1) //len was encoded smaller 
                 val decodeBuffer = windowBuffer.subList(windowBuffer.size + offset, windowBuffer.size + offset + length)
                 decodeBuffer.forEach {
                     outputStream.add(it)
@@ -85,7 +83,6 @@ class LZSSCompressor(val params: CompressionParams, val matchingEngine: SlidingW
 
     private fun trimBuffer(buffer: ArrayList<Byte>, maxSize: Int) {
         while (buffer.size > maxSize) {
-            log("trimming one")
             buffer.removeAt(0) //should remove the number of matched items
         }
     }
