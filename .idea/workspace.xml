@@ -2,7 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec9c0726-ba6c-4b83-b1f7-eb115eb35cba" name="Default" comment="Massive upload of latest compression">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt" afterPath="$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/compressor/io/CompressedIOStream.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/compressor/io/binary/BinaryCompressionInput.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/compressor/io/binary/BinaryCompressionOutput.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/compressor/lib/BinaryIn.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/compressor/lib/BinaryOut.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/compressor/models/FileConfig.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/compressor/models/InOutStreamPair.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/compressor/search/KMPSearch.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/compressor/search/SearchContract.kt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/book1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/book2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/geo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/news" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/obj1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/obj2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/paper1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/paper2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/pic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/progc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/progl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/progp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/NoCheck/trans" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/compressor/common/BaseCompressor.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/compressor/common/DataBlock$BackReference.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/compressor/common/DataBlock$Literal.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/compressor/common/DataBlock$Location.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/compressor/common/DataBlock.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/compressor/lzss/CompressionParams.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/compressor/lzss/KnutMorrisPrat.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/compressor/lzss/LZSSCompressor.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/compressor/lzss/MatchResult.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/compressor/lzss/SlidingWindowSearcher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/samples/alittletest" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/samples/bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FBCompression/util/UtilKt.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/compressor/common/BaseCompressor.kt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/compressor/lzss/KMP.kt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/compressor/lzw/LZWCompressor.kt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/samples/alittletest" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/bib" afterPath="$PROJECT_DIR$/src/samples/uncompressed/bib" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/book1" afterPath="$PROJECT_DIR$/src/samples/uncompressed/book1" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/book2" afterPath="$PROJECT_DIR$/src/samples/uncompressed/book2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/geo" afterPath="$PROJECT_DIR$/src/samples/uncompressed/geo" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/news" afterPath="$PROJECT_DIR$/src/samples/uncompressed/news" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/obj1" afterPath="$PROJECT_DIR$/src/samples/uncompressed/obj1" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/obj2" afterPath="$PROJECT_DIR$/src/samples/uncompressed/obj2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/paper1" afterPath="$PROJECT_DIR$/src/samples/uncompressed/paper1" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/paper2" afterPath="$PROJECT_DIR$/src/samples/uncompressed/paper2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/pic" afterPath="$PROJECT_DIR$/src/samples/uncompressed/pic" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/progc" afterPath="$PROJECT_DIR$/src/samples/uncompressed/progc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/progl" afterPath="$PROJECT_DIR$/src/samples/uncompressed/progl" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/progp" afterPath="$PROJECT_DIR$/src/samples/uncompressed/progp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NoCheck/trans" afterPath="$PROJECT_DIR$/src/samples/uncompressed/trans" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/compressor/common/DataBlock.kt" afterPath="$PROJECT_DIR$/src/compressor/models/Block.kt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt" afterPath="$PROJECT_DIR$/src/compressor/models/CompressionParams.kt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt" afterPath="$PROJECT_DIR$/src/compressor/Compressor.kt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/compressor/lzss/MatchResult.kt" afterPath="$PROJECT_DIR$/src/compressor/models/MatchResult.kt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt" afterPath="$PROJECT_DIR$/src/compressor/search/SlidingWindowSearch.kt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/util/Util.kt" afterPath="$PROJECT_DIR$/src/util/globals.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FBCompression/META-INF/FBCompression.kotlin_module" afterPath="$PROJECT_DIR$/out/production/FBCompression/META-INF/FBCompression.kotlin_module" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FBCompression/MainKt.class" afterPath="$PROJECT_DIR$/out/production/FBCompression/MainKt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.kt" afterPath="$PROJECT_DIR$/src/main.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,67 +81,115 @@
     <SUITE FILE_PATH="coverage/FBCompression$FBCompressorKt.coverage" NAME="FBCompressorKt Coverage Results" MODIFIED="1538979632304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="CompressionParams.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlidingWindowSearcher.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alittletest" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/samples/alittletest">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="1322" column="0" lean-forward="true" selection-start-line="1322" selection-start-column="0" selection-end-line="1322" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="main.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+            <state relative-caret-position="405">
+              <caret line="27" column="59" lean-forward="false" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
               <folding>
-                <element signature="e#0#210#0" expanded="true" />
+                <element signature="e#0#431#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LZSSCompressor.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt">
+      <file leaf-file-name="KMPSearch.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compressor/search/KMPSearch.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="50" column="109" lean-forward="false" selection-start-line="50" selection-start-column="109" selection-end-line="50" selection-end-column="109" />
+            <state relative-caret-position="315">
+              <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="35" />
               <folding>
-                <element signature="e#25#135#0" expanded="true" />
+                <element signature="e#27#106#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchResult.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/compressor/lzss/MatchResult.kt">
+      <file leaf-file-name="BinaryCompressionOutput.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compressor/io/binary/BinaryCompressionOutput.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="63" lean-forward="true" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
+            <state relative-caret-position="255">
+              <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+              <folding>
+                <element signature="e#30#172#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SlidingWindowSearch.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compressor/search/SlidingWindowSearch.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+              <folding>
+                <element signature="e#27#106#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_Collections.kt" pinned="false" current-in-tab="false">
+        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/generated/_Collections.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="884" column="45" lean-forward="false" selection-start-line="884" selection-start-column="45" selection-end-line="884" selection-end-column="45" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Arrays.kt" pinned="false" current-in-tab="false">
+        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/Arrays.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1287">
+              <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InOutStreamPair.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compressor/models/InOutStreamPair.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BinaryCompressionInput.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compressor/io/binary/BinaryCompressionInput.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+              <folding>
+                <element signature="e#30#201#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchContract.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compressor/search/SearchContract.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="64" lean-forward="false" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Compressor.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/compressor/Compressor.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="47" column="53" lean-forward="false" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+              <folding>
+                <element signature="e#20#320#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,10 +199,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
-        <option value="Kotlin File" />
         <option value="JUnit4 Test Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -105,7 +217,28 @@
       <find>window</find>
       <find>offset</find>
       <find>25</find>
+      <find>byte</find>
+      <find>buffere</find>
+      <find>writeByt</find>
+      <find>append</find>
+      <find>paren</find>
+      <find>flush</find>
+      <find>close</find>
+      <find>16-bit</find>
+      <find>outputst</find>
+      <find>output</find>
+      <find>name</find>
+      <find>getName</find>
+      <find>time</find>
+      <find>found</find>
+      <find>found matc</find>
+      <find>total searc</find>
+      <find>log</find>
+      <find>loops</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/compressor</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,28 +251,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/SampleCorpus.txt" />
-        <option value="$PROJECT_DIR$/src/GreenEggsCorpus.txt" />
-        <option value="$PROJECT_DIR$/src/Extensions.kt" />
-        <option value="$PROJECT_DIR$/src/FBCompressor.kt" />
-        <option value="$PROJECT_DIR$/src/mainDriver.kts" />
-        <option value="$PROJECT_DIR$/src/compressor/FBCompressor.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/LZWCompressor.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/LZSSCompressor.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/BaseCompressor.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/lzss/KnutMorrisPrat.java" />
-        <option value="$PROJECT_DIR$/src/compressor/lzss/KMP.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcherTest.kt" />
-        <option value="$PROJECT_DIR$/src/util/Util.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/common/DataBlock.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/lzss/MatchResult.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/common/BinaryInputStream.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/common/BitInputStream.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/LZSSInputOutputContract.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/common/BitOutputStream.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/common/binary/BinaryIn.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/common/binary/BinaryIn.java" />
+        <option value="$PROJECT_DIR$/src/NoCheck/alittletest" />
+        <option value="$PROJECT_DIR$/src/compressor/common/binary/BinaryOut.java" />
         <option value="$PROJECT_DIR$/src/compressor/common/BaseCompressor.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/lzw/LZWCompressor.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt" />
-        <option value="$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt" />
         <option value="$PROJECT_DIR$/src/samples/alittletest" />
-        <option value="$PROJECT_DIR$/src/main.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/LZSSBinaryReaderWriter.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/LZSSInputOutput.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/common/lib/BinaryOut.java" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/models/DataBlock.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/LZSSIO.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/BlockIO.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/LZSSBinaryIO.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/BinaryBlockIO.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/models/DataBlock.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/models/Block.kt" />
         <option value="$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/io/BlockIO.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/io/BlockIOContract.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lzss/BlockCompressor.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/search/SlidingWindowSearcher.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/io/BinaryBlockOutput.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/io/BinaryBlockIO.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/io/BinaryBlockInput.kt" />
+        <option value="$PROJECT_DIR$/src/samples/pristine/testtext.txt" />
+        <option value="$PROJECT_DIR$/src/compressor/io/binary/BinaryBlockInput.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/models/MatchResult.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/base/BaseCompressor.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/BlockCompressor.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/io/binary/BinaryBlockOutput.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/io/binary/BinaryCompressionInput.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/io/CompressionIOContract.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/io/CompressedIOStream.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/search/HashSearch.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/search/KMPSearch.java" />
+        <option value="$PROJECT_DIR$/src/compressor/search/KMP.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/lib/BinaryOut.java" />
+        <option value="$PROJECT_DIR$/src/util/globals.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/models/CompressionParams.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/io/binary/BinaryCompressionOutput.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/search/KMPSearch.kt" />
+        <option value="$PROJECT_DIR$/src/main.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/Compressor.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/search/SearchContract.kt" />
+        <option value="$PROJECT_DIR$/src/compressor/search/SlidingWindowSearch.kt" />
       </list>
     </option>
   </component>
@@ -186,21 +348,36 @@
               <item name="FBCompression" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="compressor" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FBCompression" type="b2602c69:ProjectViewProjectNode" />
               <item name="FBCompression" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="compressor" type="462c0819:PsiDirectoryNode" />
-              <item name="lzss" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="binary" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FBCompression" type="b2602c69:ProjectViewProjectNode" />
               <item name="FBCompression" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="compressor" type="462c0819:PsiDirectoryNode" />
-              <item name="lzw" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FBCompression" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FBCompression" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="compressor" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FBCompression" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FBCompression" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="compressor" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FBCompression" type="b2602c69:ProjectViewProjectNode" />
@@ -212,45 +389,51 @@
               <item name="FBCompression" type="b2602c69:ProjectViewProjectNode" />
               <item name="FBCompression" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="samples" type="462c0819:PsiDirectoryNode" />
+              <item name="pristine" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="main&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/main.kt&#10;sear&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/SlidingWindowSearcher.kt&#10;ali&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;lzs&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSCompressor.kt&#10;alit&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;l&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSCompressor.kt&#10;sea&#9;null&#9;null&#10;com\&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/BaseCompressor.kt&#10;lzss&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSCompressor.kt&#10;lzw&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzw/LZWCompressor.kt&#10;base&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/BaseCompressor.kt&#10;a li&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;lz&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzw/LZWCompressor.kt&#10;databloc&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/DataBlock.kt&#10;ain&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/main.kt&#10;matc&#9;null&#9;null&#10;se&#9;null&#9;null&#10;co&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/SampleCorpus.txt" />
+    <property name="SearchEverywhereHistoryKey" value="compr&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/Compressor.kt&#10;compre&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/Compressor.kt&#10;main&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/main.kt&#10;slidin&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/search/SlidingWindowSearch.kt&#10;comp&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/Compressor.kt&#10;com&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/models/CompressionParams.kt&#10;m&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/search/KMPSearch.kt&#10;kmp&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/search/KMPSearch.kt&#10;km&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/search/KMPSearch.kt&#10;mai&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/main.kt&#10;sl&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/search/SlidingWindowSearch.kt&#10;file&#9;PSI&#9;JAVA://java.io.File&#10;compressor&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/Compressor.kt&#10;base&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/base/BaseCompressor.kt&#10;bloc&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/BlockCompressor.kt&#10;blo&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/io/BlockIOContract.kt&#10;blok&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/BlockCompressor.kt&#10;blockcom&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/BlockCompressor.kt&#10;test&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/pristine/testtext.txt&#10;block&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/BlockCompressor.kt&#10;docompre&#9;null&#9;null&#10;ba&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/base/BaseCompressor.kt&#10;datab&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/DataBlock.kt&#10;lzw&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzw/LZWCompressor.kt&#10;lzs&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSCompressor.kt&#10;alit&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;lzss&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSCompressor.kt&#10;lz&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSBinaryReaderWriter.kt&#10;litt&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;ali&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;binar&#9;null&#9;null&#10;al&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;l&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/LZSSBinaryReaderWriter.kt&#10;bit&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/BitInputStream.kt&#10;bufferedIn&#9;PSI&#9;JAVA://java.io.BufferedInputStream&#10;sear&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/lzss/SlidingWindowSearcher.kt&#10;sea&#9;null&#9;null&#10;com\&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/BaseCompressor.kt&#10;a li&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/samples/alittletest&#10;databloc&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/compressor/common/DataBlock.kt&#10;ain&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/main.kt&#10;matc&#9;null&#9;null&#10;se&#9;null&#9;null&#10;co&#9;FILE&#9;file:///Users/brandon/IdeaProjects/FBCompression/src/SampleCorpus.txt" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.typerenderers" />
+    <property name="run.code.analysis.last.selected.profile" value="pktlint" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/compressor" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="compressor.lzss" />
     </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="compressor.lzw" />
-      <recent name="compressor.lzss" />
-      <recent name="compressor.common" />
-      <recent name="compressor" />
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/compressor/search" />
+      <recent name="$PROJECT_DIR$/src/util" />
+      <recent name="$PROJECT_DIR$/src/samples" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="compressor.models" />
+      <recent name="compressor.io.binary" />
+      <recent name="compressor" />
+      <recent name="compressor.search" />
+      <recent name="compressor.io" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/util" />
-      <recent name="$PROJECT_DIR$/src/samples" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/compressor/io" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -289,6 +472,9 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="FBCompression" />
       <envs />
+      <RunnerSettings RunnerId="Debug with VisualVM">
+        <option name="visualVMId" value="1068375957397061" />
+      </RunnerSettings>
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
@@ -407,25 +593,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.421" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.323" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2701389" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21904762" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.305" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.304" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -481,321 +669,416 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/compressor/lib/BinaryOut.java</url>
+          <line>118</line>
+          <properties />
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/compressor/lib/BinaryIn.java</url>
+          <line>176</line>
+          <properties />
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/compressor/lib/BinaryIn.java</url>
+          <line>356</line>
+          <properties />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt</url>
+          <url>file://$PROJECT_DIR$/src/compressor/search/KMPSearch.kt</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/compressor/search/KMPSearch.kt</url>
           <line>49</line>
           <properties />
-          <option name="timeStamp" value="50" />
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="51" />
+      <option name="time" value="73" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JetRunConfigurationType">
-        <watch expression="slidingWindow[i]" />
-        <watch expression="buffer[bufferHead]" />
-        <watch expression="byte" language="kotlin" />
-        <watch expression="buffer.get(0)" language="kotlin" />
-        <watch expression="buffer.get(buffer.size-1)" language="kotlin" />
-        <watch expression="sub.map { it.toChar() }.let { it.joinToString(&quot;&quot;) }" language="kotlin" />
-        <watch expression="window.map { it.toChar() }.let { it.joinToString(&quot;&quot;) }" language="kotlin" />
+        <watch expression="lps[patIdx-1]" language="kotlin" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzw/LZWCompressor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="36" column="9" lean-forward="false" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/common/DataBlock.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/samples/alittletest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/common/BaseCompressor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#27#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#210#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Util.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="87" lean-forward="false" selection-start-line="13" selection-start-column="87" selection-end-line="13" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/KMP.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding>
-            <element signature="e#25#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/common/DataBlock.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzw/LZWCompressor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="9" lean-forward="false" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/common/BaseCompressor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#27#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/samples/alittletest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#210#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Util.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="87" lean-forward="false" selection-start-line="13" selection-start-column="87" selection-end-line="13" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/KMP.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding>
-            <element signature="e#25#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/samples/SampleCorpus.txt" />
-    <entry file="file://$PROJECT_DIR$/src/samples/GreenEggsCorpus.txt" />
-    <entry file="file://$PROJECT_DIR$/src/mainDriver.kts" />
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/system/Timing.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/KnutMorrisPrat.java" />
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/Arrays.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcherTest.java" />
     <entry file="file://$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcherTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/KMP.kt">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/io/InputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="159">
+          <caret line="44" column="22" lean-forward="false" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/io/BufferedInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="125" column="46" lean-forward="true" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/Primitives.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="61" column="55" lean-forward="true" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/io/Constants.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/io/IOStreams.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/io/BufferedWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="36" column="61" lean-forward="false" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/io/ReadWrite.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1242">
+          <caret line="18" column="82" lean-forward="false" selection-start-line="18" selection-start-column="82" selection-end-line="18" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/common/binary/BinaryIn.kt" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/lang/AutoCloseable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="50" column="17" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/io/Closeable.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="31" column="40" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NoCheck/alittletest" />
+    <entry file="file://$PROJECT_DIR$/src/compressor/common/BitInputStream.kt" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/io/OutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-772">
+          <caret line="45" column="22" lean-forward="false" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/io/BufferedOutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="138" column="32" lean-forward="true" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
+          <folding>
+            <element signature="e#1188#1189#0" expanded="false" />
+            <element signature="e#1219#1220#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/io/files/FileTreeWalk.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3885">
+          <caret line="261" column="16" lean-forward="false" selection-start-line="261" selection-start-column="16" selection-end-line="261" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/samples/alittletest" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/io/FilterOutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/lzw/LZWCompressor.kt" />
+    <entry file="file://$PROJECT_DIR$/src/compressor/lib/BinaryIn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="44" column="19" lean-forward="false" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/common/BitOutputStream.kt" />
+    <entry file="file://$PROJECT_DIR$/util/ExtensionsKt.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/io/BinaryBlockIO.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/models/Block.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/rt.jar!/com/sun/xml/internal/messaging/saaj/util/ByteOutputStream.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/samples/pristine/testtext.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="5977" column="60" lean-forward="true" selection-start-line="5977" selection-start-column="60" selection-end-line="5977" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/io/FileReadWrite.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="172" column="23" lean-forward="false" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/models/MatchResult.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/base/BaseCompressor.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/io/CompressedIOStream.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="490" column="13" lean-forward="false" selection-start-line="490" selection-start-column="13" selection-end-line="490" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Util.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="87" lean-forward="false" selection-start-line="13" selection-start-column="87" selection-end-line="13" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/generated/_Collections.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="175" column="23" lean-forward="false" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzw/LZWCompressor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/common/DataBlock.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/common/BaseCompressor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        <state relative-caret-position="262">
+          <caret line="377" column="0" lean-forward="true" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
           <folding>
-            <element signature="e#27#138#0" expanded="true" />
+            <element signature="e#13541#13542#0" expanded="false" />
+            <element signature="e#13596#13597#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/io/IOStreams.kt">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/nio/file/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="452" column="25" lean-forward="false" selection-start-line="452" selection-start-column="18" selection-end-line="452" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/system/Timing.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/search/KMPSearch.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#27#106#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/globals.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/search/KMP.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/collections/Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-840">
+          <caret line="253" column="23" lean-forward="false" selection-start-line="253" selection-start-column="23" selection-end-line="253" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/lib/BinaryOut.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="58" column="124" lean-forward="false" selection-start-line="58" selection-start-column="118" selection-end-line="58" selection-end-column="124" />
+          <caret line="269" column="12" lean-forward="false" selection-start-line="269" selection-start-column="12" selection-end-line="269" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/models/CompressionParams.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/CompressionParams.kt">
+    <entry file="file://$PROJECT_DIR$/src/compressor/search/KMPSearch.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        <state relative-caret-position="315">
+          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="35" />
+          <folding>
+            <element signature="e#27#106#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/models/InOutStreamPair.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/SlidingWindowSearcher.kt">
+    <entry file="file://$PROJECT_DIR$/src/compressor/io/binary/BinaryCompressionOutput.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="255">
+          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding>
+            <element signature="e#30#172#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/samples/alittletest">
+    <entry file="file://$PROJECT_DIR$/src/compressor/io/binary/BinaryCompressionInput.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="1322" column="0" lean-forward="true" selection-start-line="1322" selection-start-column="0" selection-end-line="1322" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="390">
+          <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="e#30#201#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        <state relative-caret-position="405">
+          <caret line="27" column="59" lean-forward="false" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
           <folding>
-            <element signature="e#0#210#0" expanded="true" />
+            <element signature="e#0#431#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/MatchResult.kt">
+    <entry file="file://$PROJECT_DIR$/src/compressor/search/SearchContract.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="63" lean-forward="true" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
+        <state relative-caret-position="75">
+          <caret line="5" column="64" lean-forward="false" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compressor/lzss/LZSSCompressor.kt">
+    <entry file="file://$PROJECT_DIR$/src/compressor/search/SlidingWindowSearch.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="50" column="109" lean-forward="false" selection-start-line="50" selection-start-column="109" selection-end-line="50" selection-end-column="109" />
+        <state relative-caret-position="88">
+          <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
           <folding>
-            <element signature="e#25#135#0" expanded="true" />
+            <element signature="e#27#106#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/generated/_Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="884" column="45" lean-forward="false" selection-start-line="884" selection-start-column="45" selection-end-line="884" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/Arrays.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1287">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compressor/Compressor.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="47" column="53" lean-forward="false" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+          <folding>
+            <element signature="e#20#320#0" expanded="true" />
           </folding>
         </state>
       </provider>

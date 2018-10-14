@@ -1,36 +1,54 @@
-import compressor.common.BaseCompressor
-import compressor.lzss.CompressionParams
-import compressor.lzss.LZSSCompressor
-import compressor.lzss.SlidingWindowSearcher
+import compressor.Compressor
+import compressor.io.binary.BinaryCompressionInput
+import compressor.io.binary.BinaryCompressionOutput
+import compressor.models.CompressionParams
+import compressor.models.FileConfig
+import compressor.models.InOutStreamPair
+import compressor.search.KMPSearch
+import compressor.search.SlidingWindowSearch
+import util.log
 import java.io.File
 import java.nio.file.Paths
+import java.util.concurrent.TimeUnit
+
+
+private val rootPath = Paths.get("").toAbsolutePath().toString()
+private val pristineConfig = FileConfig(rootPath + "/src/samples/pristine/")
+private val compressedConfig = FileConfig(rootPath + "/src/samples/compressed/", ".compressed")
+private val uncompressedConfig = FileConfig(rootPath + "/src/samples/uncompressed/")
 
 /*
 * Driver code for our compressor.
-* Will compress all files in the samples folder.
+* Will compress all files in the "/uncompressed" folder.
 */
 fun main(args: Array<String>) {
-//    val compressorLZW = LZWCompressor(verbose = false)
-    val params = CompressionParams(maxBytesUncodedLiteral = 2)
-    val testParams = CompressionParams(maxBytesUncodedLiteral = 2, maxCodeLengthBytes = 5, dictSizeBytes = 13)
-//    val testSearchParams = CompressionParams(maxBytesUncodedLiteral = 2, maxCodeLengthBytes = 10, dictSizeBytes = 12)
-    val compressorLZSS = LZSSCompressor(params, SlidingWindowSearcher(params), verbose = true)
-    getSampleFiles()?.take(2)?.forEachIndexed { index, file ->
-        compress(file, compressorLZSS)
-        val newFileName = "testfile$index"
-        val path = file.path
 
-//        File(path+newFileName).writeBytes(ByteArray(0))
+    val params = CompressionParams()
+    val compressorLinear = Compressor(params, SlidingWindowSearch(params), verbose = true)
+    val compressor = Compressor(params, KMPSearch(params), verbose = true)
+
+    compressFiles(compressorLinear, params)
+//    compressFiles(compressor, params)
+    log("\tTotal Compression Time (seconds): ${TimeUnit.MILLISECONDS.toSeconds(Compressor.totalCopressionTime)}")
+
+//    decompressFiles(compressor, params)
+}
+
+fun compressFiles(compressor: Compressor, params: CompressionParams) {
+    getFiles(pristineConfig.dir)?.forEach { pristineFile ->
+        val compressedFilePath = compressedConfig.makePathForName(pristineFile.name)
+        with(InOutStreamPair(pristineFile.path, compressedFilePath)) {
+            compressor.compress("${pristineFile.name} Compression", inStream, BinaryCompressionOutput(outStream, params))
+        }
     }
 }
 
-fun getSampleFiles(): Collection<File>? {
-    val path = Paths.get("").toAbsolutePath().toString()
-    val dir = "/src/samples"
-    return File(path + dir).listFiles().filterNot { it.name[0] == '.' }
+fun decompressFiles(compressor: Compressor, params: CompressionParams) {
+    getFiles(compressedConfig.dir)?.forEach { compressedFile ->
+        with(InOutStreamPair(compressedFile.path, uncompressedConfig.makePathForName(compressedFile.nameWithoutExtension))) {
+            compressor.decompress("${compressedFile.name} Decompression",BinaryCompressionInput(inStream, params), outStream)
+        }
+    }
 }
 
-fun compress(uncompressedFile: File, compressor: BaseCompressor){
-    compressor.encode(uncompressedFile.name, uncompressedFile)
-
-}
+fun getFiles(dirPath: String): Collection<File>? = File(dirPath).listFiles().filterNot { it.name[0] == '.' }
