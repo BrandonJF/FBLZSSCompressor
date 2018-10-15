@@ -3,7 +3,10 @@ package compressor.search
 import compressor.models.CompressionParams
 import compressor.models.MatchResult
 
-
+/**
+ * A class which uses Knuth-Morris-Pratt table in order to search for longest shared substrings.
+ * In practice, performance is generally no faster than our sliding window search.
+ */
 class KMPSearch(val compressionParams: CompressionParams) : SearchContract {
 
     override fun findMatch(windowBuffer: ArrayList<Byte>, lookaheadBuffer: ArrayList<Byte>): MatchResult {
@@ -30,7 +33,7 @@ class KMPSearch(val compressionParams: CompressionParams) : SearchContract {
                 txtIdx++
                 loopsRun++
             }
-            if (patIdx == patSize) { //found the entire pattern, return.
+            if (patIdx == patSize) { // found the entire pattern, return.
                 bestLen = patIdx
                 bestOffset = txtIdx - patIdx
                 patIdx = lps[patIdx - 1]
@@ -38,14 +41,14 @@ class KMPSearch(val compressionParams: CompressionParams) : SearchContract {
                 if (patIdx != 0) {
 
                     if (patIdx >= bestLen) {
-                        bestLen = patIdx//if this is the best len thus far
+                        bestLen = patIdx // if this is the best len thus far
                         bestOffset = txtIdx - patIdx
                     }
-                    if (patIdx >= compressionParams.maxCodeLengthBytes) {
-                        bestLen = compressionParams.maxCodeLengthBytes
+                    if (patIdx >= compressionParams.MAX_CODE_LENGTH_BYTES) {
+                        bestLen = compressionParams.MAX_CODE_LENGTH_BYTES
                         break
                     }
-                    patIdx = lps[patIdx - 1] //update where in the pattern we want to search from
+                    patIdx = lps[patIdx - 1] // update where in the pattern we want to search from
                 } else {
                     txtIdx += 1
                 }
